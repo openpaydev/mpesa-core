@@ -11,7 +11,7 @@ import lombok.extern.jackson.Jacksonized;
  * This object is used to build a payment request. The recommended way to create an instance
  * is by using the static helper method {@link #newPayBillRequest(String, String, String, String, String)}.
  * <p>
- * The {@link} will automatically populate the
+ * The {@code MpesaClient} implementation will automatically populate the
  * server-side fields ({@code BusinessShortCode}, {@code Password}, {@code Timestamp}, etc.) before sending the request.
  */
 @Value

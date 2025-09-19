@@ -4,12 +4,11 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import lombok.extern.jackson.Jacksonized;
-
 /**
  * Represents the internal request payload for the M-Pesa STK Push Status Query API.
  * <p>
  * This class is an internal model and is not intended to be used directly by the SDK consumer.
- * The {@link} creates and populates this object.
+ * The {@code MpesaClient} creates and populates this object.
  */
 @Value
 @Jacksonized

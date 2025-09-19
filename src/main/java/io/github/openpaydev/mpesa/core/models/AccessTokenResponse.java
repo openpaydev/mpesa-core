@@ -8,7 +8,7 @@ import lombok.extern.jackson.Jacksonized;
 /**
  * Represents the response object received from the M-Pesa OAuth token generation endpoint.
  * <p>
- * This is an internal model used by the {@link}
+ * This is an internal model used by the {@link io.github.openpaydev.mpesa.core.auth.TokenManager}
  * to deserialize the authentication response.
  */
 @Value

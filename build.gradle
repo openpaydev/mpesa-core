@@ -1,6 +1,6 @@
 plugins {
     id 'java-library'
-    id "com.vanniktech.maven.publish" version "0.25.3"
+    id "com.vanniktech.maven.publish" version "0.34.0"
 }
 
 // Add this block
@@ -29,42 +29,42 @@ test {
 }
 
 
+// DELETE your old mavenPublishing block and REPLACE it with this one.
+
 mavenPublishing {
     coordinates(GROUP, 'mpesa-core', VERSION_NAME)
 
     pom {
-        name = POM_NAME
-        description = POM_DESCRIPTION
-        inceptionYear = POM_INCEPTION_YEAR
-        url = POM_URL
+        name.set(POM_NAME)
+        description.set(POM_DESCRIPTION)
+        inceptionYear.set(POM_INCEPTION_YEAR)
+        url.set(POM_URL)
 
         licenses {
             license {
-                name = POM_LICENCE_NAME
-                url = POM_LICENCE_URL
-                distribution = POM_LICENCE_DIST
+                name.set(POM_LICENCE_NAME)
+                url.set(POM_LICENCE_URL)
+                distribution.set(POM_LICENCE_DIST)
             }
         }
 
         developers {
             developer {
-                id = POM_DEVELOPER_ID
-                name = POM_DEVELOPER_NAME
-                email = POM_DEVELOPER_EMAIL
-                url = POM_DEVELOPER_URL
-                organization = POM_ORGANIZATION_NAME
-                organizationUrl = POM_ORGANIZATION_URL
+                id.set(POM_DEVELOPER_ID)
+                name.set(POM_DEVELOPER_NAME)
+                email.set(POM_DEVELOPER_EMAIL)
+                url.set(POM_DEVELOPER_URL)
+                organization.set(POM_ORGANIZATION_NAME)
+                organizationUrl.set(POM_ORGANIZATION_URL)
             }
         }
 
         scm {
-            url = POM_SCM_URL
-            connection = POM_SCM_CONNECTION
-            developerConnection = POM_SCM_DEV_CONNECTION
+            url.set(POM_SCM_URL)
+            connection.set(POM_SCM_CONNECTION)
+            developerConnection.set(POM_SCM_DEV_CONNECTION)
         }
     }
 
-    if (project.hasProperty('signAllPublications') && signAllPublications.toBoolean()) {
-        signAllPublications()
-    }
+//    signAllPublications()
 }
