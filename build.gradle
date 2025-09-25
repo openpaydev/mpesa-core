@@ -8,6 +8,11 @@ repositories {
     mavenCentral()
 }
 
+// Define a single version for all JUnit 5 libraries
+ext {
+    junitVersion = '5.10.2' // Using a recent, stable version
+}
+
 dependencies {
     api 'org.slf4j:slf4j-api:2.0.13'
 
@@ -17,19 +22,17 @@ dependencies {
     compileOnly 'org.projectlombok:lombok:1.18.32'
     annotationProcessor 'org.projectlombok:lombok:1.18.32'
 
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.0'
+    // --- All JUnit dependencies now use the same version ---
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
+    testImplementation "org.junit.jupiter:junit-jupiter-params:${junitVersion}"
 
     testImplementation 'org.mockito:mockito-core:5.11.0'
     testImplementation 'org.mockito:mockito-junit-jupiter:5.11.0'
 }
-
-test {
+tasks.named('test') {
     useJUnitPlatform()
 }
-
-
-// DELETE your old mavenPublishing block and REPLACE it with this one.
 
 mavenPublishing {
     coordinates(GROUP, 'mpesa-core', VERSION_NAME)
